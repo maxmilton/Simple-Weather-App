@@ -1,0 +1,23 @@
+{
+  "name": "simple-weather-app",
+  "version": "1.0.0",
+  "description": "Simple AngularJS weather app using OpenWeatherMap API",
+  "main": "index.js",
+  "scripts": {
+    //"start": "npm start express",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaxMilton/Simple-Weather-App.git"
+  },
+  "author": "Max Milton <max@wearegenki.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaxMilton/Simple-Weather-App/issues"
+  },
+  "homepage": "https://github.com/MaxMilton/Simple-Weather-App#readme",
+  "devDependencies": {
+    "express": "^4.13.3"
+  }
+}
