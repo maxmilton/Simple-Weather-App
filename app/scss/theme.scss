@@ -39,7 +39,7 @@ html {
 header { margin-bottom: 2em; }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 2.3em;
   font-weight: $font-weight;
 }
 
@@ -61,6 +61,8 @@ button {
   border-radius: $radius;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
   max-width: 30em;
+  position: relative;
+  z-index: 2;
 
   &.orange {
     background-color: $orange-light;
@@ -90,7 +92,9 @@ button {
 
   & + .card {
     background-color: $white;
-    padding-top: 0.1em;
+    padding-top: 0.6em;
+    margin-top: -0.5em;
+    z-index: 1;
   }
 }
 

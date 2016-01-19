@@ -15,7 +15,7 @@ var app = angular.module('simpleWeatherApp', []);
 /////////////////
 // Controllers //
 /////////////////
-app.controller('MainCtrl', ['$http', '$sce', '$log', function($http, $sce, $log) {
+app.controller('MainController', ['$http', '$sce', '$log', function($http, $sce, $log) {
   var vm = this;
   var apiKey = 'b9a01a5d129cfc5397a97c6f6bc24292';
 
