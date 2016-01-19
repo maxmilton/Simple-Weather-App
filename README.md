@@ -1,5 +1,7 @@
 A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.
 
+View live copy at http://labs.wearegenki.com/experiments/simple-weather-app/
+
 Source code avaliable at https://github.com/MaxMilton/Simple-Weather-App
 
 # TODO
@@ -17,6 +19,9 @@ Source code avaliable at https://github.com/MaxMilton/Simple-Weather-App
     - Compression
 * Add licence fields to the top of all files
 * Fix error of undefined when serching
-* Add links to: 
-    - Creator of icons - http://www.alessioatzeni.com/meteocons/
-    - OpenWeatherMap API - http://openweathermap.org/api
+
+## Made Using
+
+* Weather Icons - http://www.alessioatzeni.com/meteocons/
+* OpenWeatherMap API - http://openweathermap.org/api
+* Normalize.css - https://necolas.github.io/normalize.css/
