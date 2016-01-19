@@ -1,32 +1,22 @@
-## AngularJS
+A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.
 
-* AJAX GET: https://docs.angularjs.org/api/ng/service/$http
-* Built in jQuery: https://docs.angularjs.org/api/ng/function/angular.element
+Source code avaliable at https://github.com/MaxMilton/Simple-Weather-App
 
-## HTML5 Geo Coords
+# TODO
 
-https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
-
-## http://openweathermap.org/current
-
-api.openweathermap.org/data/2.5/weather?q={city name}
-
-api.openweathermap.org/data/2.5/weather?q={city name},{country code}
-
-http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=2de143494c0b295cca9337e1e96b00e0
-
-
-api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}
-
-http://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=2de143494c0b295cca9337e1e96b00e0
-
-
-api.openweathermap.org/data/2.5/find?q=London&units=metric
-
-http://api.openweathermap.org/data/2.5/weather?q=London,uk&callback=test&appid=2de143494c0b295cca9337e1e96b00e0
-
-
-## ICONS - http://openweathermap.org/weather-conditions
-
-http://openweathermap.org/img/w/10d.png
-http://www.alessioatzeni.com/meteocons/
+* Add .card background colours to icon switch
+    - https://www.google.com/design/spec/style/color.html#color-color-palette
+* Add CSS animations between states
+    - Between colours
+    - Fades for between text changes
+    - Waiting/busy state
+* Split app.js into seperate files - learn about best practices
+* Responsive design
+* Performance
+    - Minification
+    - Compression
+* Add licence fields to the top of all files
+* Fix error of undefined when serching
+* Add links to: 
+    - Creator of icons - http://www.alessioatzeni.com/meteocons/
+    - OpenWeatherMap API - http://openweathermap.org/api

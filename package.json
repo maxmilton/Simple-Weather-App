@@ -1,10 +1,11 @@
 {
   "name": "simple-weather-app",
   "version": "1.0.0",
-  "description": "Simple AngularJS weather app using OpenWeatherMap API",
+  "description": "A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.",
   "main": "index.js",
   "scripts": {
-    //"start": "npm start express",
+    "start": "http-server -a 127.0.0.1 -p 8880 ./app",
+    "watch": "node-sass -w --output-style compressed app/scss/theme.scss -o app/css/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/MaxMilton/Simple-Weather-App#readme",
   "devDependencies": {
-    "express": "^4.13.3"
+    "http-server": "^0.8.5",
+    "node-sass": "^3.4.2"
   }
 }
