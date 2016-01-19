@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple Weather App</title>
+
+  <link rel="stylesheet" href="css/theme.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <script>
+    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+    ga('create', 'UA-60278224-2', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+<body ng-app="simpleWeatherApp">
+
+<header>
+  <h1>Simple Weather App</h1>
+  <p class="lead">A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.</p>
+  <p>Source code avaliable on <a href="https://github.com/MaxMilton/Simple-Weather-App">Github</a>.</p>
+</header>
+
+<div ng-controller="MainCtrl as main" ng-init="main.init()">
+  <section class="card orange">
+    <div class="top">
+      <span class="icon big">{{ main.icon }}</span>
+      <p class="temp-now">{{ main.kelvinToCelcius(main.dataCurrent.main.temp) }}<span>&nbsp;&deg;C</span></p>
+      <p class="weather-now">{{ main.dataCurrent.weather[0].description }}</p>
+      <p class="highlow">&#x25B2; {{ main.kelvinToCelcius(main.dataDaily.list[0].temp.max) }}&nbsp;&deg;C / &#x25BC; {{ main.kelvinToCelcius(main.dataDaily.list[0].temp.min) }}&nbsp;&deg;C</p>
+    </div>
+
+    <div class="location-panel">
+      <form class="search" ng-submit="main.search(searchBox)">
+        <input id="loc" ng-model="searchBox" name="location" type="text" value=""></input>
+      </form>
+      <span class="or">or</span>
+      <button ng-click="main.getCoords()">Locate Me</button>
+    </div>
+
+    <div class="bottom">
+      <div class="left">
+        <span class="icon" style="font-size: 4em;">F</span>
+        <p>Wind speed: <span class="info">{{ main.dataCurrent.wind.speed }} m/s</span></p>
+        <p>Humidity: <span class="info">{{ main.dataCurrent.main.humidity }}%</span></p>
+      </div>
+      <div class="right">
+        <span class="icon" style="font-size: 4em;">A</span>
+        <p>Sunrise: <span class="info">{{ main.dataCurrent.sys.sunrise * 1000 | date:'shortTime' }}</span></p>
+        <p>Sunset: <span class="info">{{ main.dataCurrent.sys.sunset * 1000 | date:'shortTime' }}</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" ng-show="main.lat">
+    <p>Coordinates: [{{ main.lat }}, {{ main.lon }}]</p>
+    <div ng-bind-html="main.locationImg"></div>
+  </section>
+</div>
+
+<footer>
+  <a href="https://maxmilton.com">&copy; Max Milton 2016</a>
+</footer>
+
+<script src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

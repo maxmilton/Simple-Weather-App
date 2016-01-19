@@ -1,0 +1,200 @@
+///////////////////////////////
+// Normalize ALL the things! //
+///////////////////////////////
+@import 'normalize';
+
+///////////////
+// Variables //
+///////////////
+$font-family: Roboto, "Roboto", sans-serif;
+$font-weight: 300;
+$white: #FFF;
+$grey: #E0E0E0;
+$orange: #F57C00;       // Orange 700
+$orange-light: #FF9800; // Orange 500
+$blue: #1976D2;         // Blue 700
+$blue-light: #2196F3;   // Blue 500
+$purple: #512DA8;       // Purple 700
+$purple-light: #673AB7; // Purple 500
+$radius: 5px;
+
+
+/////////////
+// Imports //
+/////////////
+@import 'fonts';
+@import 'weather-icons';
+
+///////////////////
+// Global Styles //
+///////////////////
+html {
+  background-color: $grey;
+  color: #212121;
+  font: $font-weight 1.2em $font-family;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+header { margin-bottom: 2em; }
+
+h1 {
+  font-size: 2.3em;
+  font-weight: $font-weight;
+}
+
+.lead { font-size: 1.3em; }
+
+button {
+  background-color: transparent;
+  font-family: $font-family;
+  font-size: 1.2em;
+  font-weight: $font-weight;
+  border: none;
+  padding: 0.4em;
+  opacity: 0.6;
+}
+
+.card {
+  color: $white;
+  padding: 1em;
+  border-radius: $radius;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 30em;
+
+  &.orange {
+    background-color: $orange-light;
+
+    .location-panel {
+      background-color: $orange;
+    }
+
+    & + .card {
+      color: $orange;
+    }
+  }
+  &.blue {
+    background-color: $blue-light;
+
+    .location-panel {
+      background-color: $blue;
+    }
+  }
+  &.purple {
+    background-color: $purple-light;
+
+    .location-panel {
+      background-color: $purple;
+    }
+  }
+
+  & + .card {
+    background-color: $white;
+    padding-top: 0.1em;
+  }
+}
+
+.top {
+  padding: 0.3em 1em 1em;
+}
+
+.temp-now {
+  font-size: 6em;
+  margin: 0;
+
+  & > span {
+    font-size: 0.6em;
+    vertical-align: 0.48em;
+  }
+}
+
+.weather-now {
+  font-size: 2em;
+  text-transform: capitalize;
+  margin: 0.1em 0 0.2em;
+}
+
+.highlow {
+  font-size: 1.2em;
+  margin: 0 0 0.2em;
+}
+
+.location-panel {
+  font-size: 1.1em;
+  border-radius: $radius;
+}
+
+.search { display: inline; }
+
+input[name="location"] {
+  // Inline SVG: Search icon
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="36" height="36" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" style="fill: #fff;fill-opacity:0.4"><path d="M35.5 31.2l-8.9-8.9c1.4-2.2 2.3-4.9 2.3-7.8 0-7.9-6.4-14.3-14.3-14.3 -7.9 0-14.3 6.4-14.3 14.3 0 7.9 6.4 14.3 14.3 14.3 2.9 0 5.5-0.8 7.8-2.3l8.9 8.9c0.3 0.3 0.8 0.3 1.1 0l3.2-3.2C35.8 32 35.8 31.5 35.5 31.2zM4.8 14.6c0-5.4 4.4-9.8 9.8-9.8 5.4 0 9.8 4.4 9.8 9.8 0 5.4-4.4 9.8-9.8 9.8C9.2 24.4 4.8 20 4.8 14.6z"/></svg>') 0.4em 50% no-repeat;
+  color: $white;
+  font-family: $font-family;
+  font-size: 1.4em;
+  font-weight: $font-weight;
+  background-color: transparent;
+  border: none;
+  padding: 0.4em 0 0.4em 2em;
+  width: 11.8em;
+}
+
+.icon {
+  font-family: "Meteocons", sans-serif;
+
+  &.big {
+    font-size: 8em;
+    float: right;
+  }
+}
+
+.or {
+  vertical-align: 3px;
+  opacity: 0.4;
+}
+
+.bottom {
+  margin-top: 0.9em;
+
+  & .icon {
+    margin-right: 0.15em;
+    vertical-align: bottom;
+    position: relative;
+    top: 0.15em;
+    float: left;
+  }
+
+  &:after {
+    // CLearfix hack
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
+}
+
+.left {
+  float: left;
+  width: 49.8%;
+}
+
+.right {
+  float: right;
+  width: 49.8%;
+}
+
+.info {
+  font-size: 1.2em;
+  vertical-align: middle;
+}
+
+footer {
+  text-align: center;
+  margin: 3.5em 0 2em;
+
+  & > a {
+    color: darken($grey, 15%);
+    text-decoration: none;
+  }
+}
