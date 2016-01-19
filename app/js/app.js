@@ -10,14 +10,14 @@ angular
   angular
     .module('simpleWeatherApp')
     .controller('MainController', ['$http', '$sce', '$log', function($http, $sce, $log) {
-      // Declate all the private variables
+      // Declare all the private variables
       var vm = this;
       var _currentLocation = '';
       var _apiKey = 'b9a01a5d129cfc5397a97c6f6bc24292';
       var _apiUrlCurrent = '';
       var _apiUrlDaily = '';
 
-      // Declate the controllers public API
+      // Declare the controllers public API
       vm.cardColour = 'orange';
       vm.searchBox = '';
       vm.lat = '';
@@ -34,12 +34,12 @@ angular
       };
 
       vm.kelvinToCelcius = function(kelvin) {
-        // Convert degrees kelvin to degrees celsius
+        // Convert degrees kelvin to degrees Celsius
         return round(kelvin - 273.15);
       };
 
       vm.search = function(query) {
-        // Reset latitude value to hide geo div
+        // Reset latitude value to hide extra panel
         vm.lat = '';
 
         // Set the OpenWeatherMap API URls
@@ -67,7 +67,7 @@ angular
           _apiUrlCurrent = 'http://api.openweathermap.org/data/2.5/weather?lat=' + round(vm.lat) + '&lon=' + round(vm.lon) + '&APPID=' + _apiKey + '&callback=JSON_CALLBACK';
           _apiUrlDaily = 'http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + round(vm.lat) + '&lon=' + round(vm.lon) + '&cnt=1&APPID=' + _apiKey + '&callback=JSON_CALLBACK';
 
-          // Once we have the location request the wather data
+          // Once we have the location request the weather data
           vm.weather.current();
           vm.weather.daily();
         };
@@ -89,7 +89,7 @@ angular
               // Set search/location input to show current location
               vm.searchBox = vm.dataCurrent.name;
 
-              // Show relevent icon
+              // Show relevant icon
               vm.showIcon();
             })
             .error(function(err) {
@@ -110,7 +110,7 @@ angular
       };
 
       vm.showIcon = function() {
-        // Choose the corisponding icon font letter to the correct weather type
+        // Choose the cosponsoring icon font letter to the correct weather type
         switch (vm.dataCurrent.weather[0].icon) {
           case '01d':
             // Clear sky, day
@@ -171,7 +171,7 @@ angular
 
       vm.changeColour = function (color) {
         // Change the colour of the .card CSS cl
-              // Declate the controllers public APIass
+              // Declare the controllers public APIass
         vm.cardColour = color;
       };
 
@@ -189,7 +189,7 @@ angular
       };
 
       vm.init = function () {
-        // Bunch of cityes for random selection
+        // Bunch of cities for random selection
         var cities = [
           'Sydney',
           'Melbourne',
