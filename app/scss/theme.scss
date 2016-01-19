@@ -1,35 +1,42 @@
-///////////////////////////////
-// Normalize ALL the things! //
-///////////////////////////////
-@import 'normalize';
-
 ///////////////
 // Variables //
 ///////////////
-$font-family: Roboto, "Roboto", sans-serif;
-$font-weight: 300;
+// Fonts
+$font-family: Roboto, "Roboto", sans-serif !default;
+$font-weight: 300 !default;
+
+// Colours
 $white: #FFF;
-$grey: #E0E0E0;
+$grey-bg: #E0E0E0;
 $orange: #F57C00;       // Orange 700
 $orange-light: #FF9800; // Orange 500
 $blue: #1976D2;         // Blue 700
 $blue-light: #2196F3;   // Blue 500
 $purple: #512DA8;       // Purple 700
 $purple-light: #673AB7; // Purple 500
-$radius: 5px;
+$green: #388E3C;        // Green 700
+$green-light: #4CAF50;  // Green 500
+$grey: #455A64;         // Grey 700
+$grey-light: #607D8B;   // Grey 500
+
+// Misc
+$radius: 5px !default;
+$speed: 0.7s !default;
 
 
 /////////////
 // Imports //
 /////////////
+@import 'normalize';
 @import 'fonts';
-@import 'weather-icons';
+@import 'animations';
+
 
 ///////////////////
 // Global Styles //
 ///////////////////
 html {
-  background-color: $grey;
+  background-color: $grey-bg;
   color: #212121;
   font: $font-weight 1.2em $font-family;
   margin-left: 1em;
@@ -53,9 +60,16 @@ button {
   border: none;
   padding: 0.4em;
   opacity: 0.6;
+
+  &:focus {
+    outline:none;
+  }
 }
 
 .card {
+  // Animate background colour changes
+  transition: background-color $speed ease;
+
   color: $white;
   padding: 1em;
   border-radius: $radius;
@@ -70,7 +84,6 @@ button {
     .location-panel {
       background-color: $orange;
     }
-
     & + .card {
       color: $orange;
     }
@@ -81,12 +94,38 @@ button {
     .location-panel {
       background-color: $blue;
     }
+    & + .card {
+      color: $blue;
+    }
   }
   &.purple {
     background-color: $purple-light;
 
     .location-panel {
       background-color: $purple;
+    }
+    & + .card {
+      color: $purple;
+    }
+  }
+  &.grey {
+    background-color: $grey-light;
+
+    .location-panel {
+      background-color: $grey;
+    }
+    & + .card {
+      color: $grey;
+    }
+  }
+  &.green {
+    background-color: $green-light;
+
+    .location-panel {
+      background-color: $green;
+    }
+    & + .card {
+      color: $green;
     }
   }
 
@@ -95,12 +134,15 @@ button {
     padding-top: 0.6em;
     margin-top: -0.5em;
     z-index: 1;
+
+    & > p {
+      // Animate text colour changes
+      transition: color $speed ease;
+    }
   }
 }
 
-.top {
-  padding: 0.3em 1em 1em;
-}
+.top { padding: 0.3em 1em 1em; }
 
 .temp-now {
   font-size: 6em;
@@ -124,6 +166,8 @@ button {
 }
 
 .location-panel {
+  // Animate background colour changes
+  transition: background-color $speed ease;
   font-size: 1.1em;
   border-radius: $radius;
 }
@@ -141,6 +185,10 @@ input[name="location"] {
   border: none;
   padding: 0.4em 0 0.4em 2em;
   width: 11.8em;
+
+  &:focus {
+    outline:none;
+  }
 }
 
 .icon {
@@ -198,7 +246,7 @@ footer {
   margin: 3.5em 0 2em;
 
   & > a {
-    color: darken($grey, 15%);
+    color: darken($grey-bg, 15%);
     text-decoration: none;
   }
 }
