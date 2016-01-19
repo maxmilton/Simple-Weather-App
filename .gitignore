@@ -1,6 +1,3 @@
 # Node junk
 node_modules
 npm-debug.log
-
-# Compiled files (edit source not end files)
-app/css/theme.css
