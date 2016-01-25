@@ -27,16 +27,12 @@
   <p>Source code available on <a href="https://github.com/MaxMilton/Simple-Weather-App">Github</a>.</p>
 </header>
 
-<div ng-controller="MainController as main" ng-init="main.init()">
-  <p class="color-select">
-    <button ng-click="main.changeColour('orange')">Orange</button>
-    <button ng-click="main.changeColour('blue')">Blue</button>
-    <button ng-click="main.changeColour('green')">Green</button>
-    <button ng-click="main.changeColour('purple')">Purple</button>
-    <button ng-click="main.changeColour('grey')">Grey</button>
+<div ng-controller="MainController as main" ng-init="main.randomCity()">
+  <p>
+    <button ng-click="main.randomCity()" class="btn-random"><span class="icon">(</span> Random City</button>
   </p>
 
-  <section id="colour" class="card" ng-class="main.cardColour">
+  <section id="colour" class="card" ng-class="main.cardColour" ng-cloak>
     <div class="top">
       <span class="icon big">{{ main.icon }}</span>
       <p class="temp-now">{{ main.kelvinToCelcius(main.dataCurrent.main.temp) }}<span>&nbsp;&deg;C</span></p>
@@ -46,7 +42,7 @@
 
     <div class="location-panel">
       <form class="search" ng-submit="main.search(main.searchBox)">
-        <input ng-model="main.searchBox" name="location" type="text" ng-click="main.searchClick()" ng-blur="main.searchBlur()" value=""></input>
+        <input ng-model="main.searchBox" class="location" name="location" type="text" ng-click="main.searchClick()" ng-blur="main.searchBlur()" value=""></input>
       </form>
       <span class="or">or</span>
       <button ng-click="main.getCoords()">Locate Me</button>
@@ -54,12 +50,12 @@
 
     <div class="bottom">
       <div class="left">
-        <span class="icon" style="font-size: 4em;">F</span>
+        <span class="icon">F</span>
         <p>Wind speed: <span class="info">{{ main.dataCurrent.wind.speed }} m/s</span></p>
         <p>Humidity: <span class="info">{{ main.dataCurrent.main.humidity }}%</span></p>
       </div>
       <div class="right">
-        <span class="icon" style="font-size: 4em;">A</span>
+        <span class="icon">A</span>
         <p>Sunrise: <span class="info">{{ main.dataCurrent.sys.sunrise * 1000 | date:'shortTime' }}</span></p>
         <p>Sunset: <span class="info">{{ main.dataCurrent.sys.sunset * 1000 | date:'shortTime' }}</span></p>
       </div>
@@ -67,7 +63,7 @@
   </section>
 
   <!-- Extra info when using Locate Me button -->
-  <section class="card pull-down" ng-show="main.lat">
+  <section class="card pull-down" ng-show="main.lat"  ng-cloak>
     <p>Coordinates: [{{ main.lat }}, {{ main.lon }}]</p>
     <div ng-bind-html="main.locationImg"></div>
   </section>

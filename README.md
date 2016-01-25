@@ -9,9 +9,9 @@ Source code available on [Github](https://github.com/MaxMilton/Simple-Weather-Ap
 ## Interesting Points
 
 * Gets weather via the OpenWeatherMap API using JSONP requests.
-* Uses the built in geolocation browser function to get coordinates.
+* Uses browser built in geolocation to get coordinates.
 * CSS3 animations on colour change and location panel appearing.
-* Shows weather from a random city on page load.
+* Shows weather from a random city on page load and button.
 
 ## Development Instructions
 

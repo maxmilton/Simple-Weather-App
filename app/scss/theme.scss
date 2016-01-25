@@ -32,6 +32,14 @@ $speed: 0.7s !default;
 @import 'animations';
 
 
+///////////////////////
+// AngularJS Helpers //
+///////////////////////
+[ng-cloak] {
+  display: none !important;
+}
+
+
 ///////////////////
 // Global Styles //
 ///////////////////
@@ -66,6 +74,15 @@ button {
   }
 }
 
+.btn-random {
+  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: $radius;
+
+  & > .icon {
+    vertical-align: -2px;
+  }
+}
+
 .card {
   // Animate background colour changes
   transition: background-color $speed ease;
@@ -73,7 +90,7 @@ button {
   color: $white;
   padding: 1em;
   border-radius: $radius;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   max-width: 30em;
   position: relative;
   z-index: 2;
@@ -84,46 +101,55 @@ button {
     .location-panel {
       background-color: $orange;
     }
+
     & + .card {
       color: $orange;
     }
   }
+
   &.blue {
     background-color: $blue-light;
 
     .location-panel {
       background-color: $blue;
     }
+
     & + .card {
       color: $blue;
     }
   }
+
   &.purple {
     background-color: $purple-light;
 
     .location-panel {
       background-color: $purple;
     }
+
     & + .card {
       color: $purple;
     }
   }
+
   &.grey {
     background-color: $grey-light;
 
     .location-panel {
       background-color: $grey;
     }
+
     & + .card {
       color: $grey;
     }
   }
+
   &.green {
     background-color: $green-light;
 
     .location-panel {
       background-color: $green;
     }
+
     & + .card {
       color: $green;
     }
@@ -174,7 +200,7 @@ button {
 
 .search { display: inline; }
 
-input[name="location"] {
+.location {
   // Inline SVG: Search icon
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="36" height="36" viewBox="0 0 36 36" enable-background="new 0 0 36 36" xml:space="preserve" style="fill: #fff;fill-opacity:0.4"><path d="M35.5 31.2l-8.9-8.9c1.4-2.2 2.3-4.9 2.3-7.8 0-7.9-6.4-14.3-14.3-14.3 -7.9 0-14.3 6.4-14.3 14.3 0 7.9 6.4 14.3 14.3 14.3 2.9 0 5.5-0.8 7.8-2.3l8.9 8.9c0.3 0.3 0.8 0.3 1.1 0l3.2-3.2C35.8 32 35.8 31.5 35.5 31.2zM4.8 14.6c0-5.4 4.4-9.8 9.8-9.8 5.4 0 9.8 4.4 9.8 9.8 0 5.4-4.4 9.8-9.8 9.8C9.2 24.4 4.8 20 4.8 14.6z"/></svg>') 0.4em 50% no-repeat;
   color: $white;
@@ -208,7 +234,8 @@ input[name="location"] {
 .bottom {
   margin-top: 0.9em;
 
-  & .icon {
+  .icon {
+    font-size: 4em;
     margin-right: 0.15em;
     vertical-align: bottom;
     position: relative;
