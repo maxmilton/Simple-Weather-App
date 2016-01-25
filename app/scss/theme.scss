@@ -7,6 +7,7 @@ $font-weight: 300 !default;
 
 // Colours
 $white: #FFF;
+$black: #212121;
 $grey-bg: #E0E0E0;
 $orange: #F57C00;       // Orange 700
 $orange-light: #FF9800; // Orange 500
@@ -45,7 +46,7 @@ $speed: 0.7s !default;
 ///////////////////
 html {
   background-color: $grey-bg;
-  color: #212121;
+  color: $black;
   font: $font-weight 1.2em $font-family;
   margin-left: 1em;
   margin-right: 1em;
@@ -75,12 +76,20 @@ button {
 }
 
 .btn-random {
-  box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
   border-radius: $radius;
+
+  &:hover {
+    box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.4);
+  }
 
   & > .icon {
     vertical-align: -2px;
   }
+}
+
+.btn-locate:hover {
+  opacity: 1;
 }
 
 .card {
