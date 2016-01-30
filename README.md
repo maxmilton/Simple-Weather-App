@@ -2,7 +2,7 @@ A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.
 
 # Overview
 
-Mostly just a project to allow me to experiment with AngularJS. View a live version at http://labs.wearegenki.com/experiments/simple-weather-app/
+Mostly just a project to allow me to experiment with AngularJS. View a live version at https://labs.wearegenki.com/experiments/simple-weather-app/
 
 Source code available on [Github](https://github.com/MaxMilton/Simple-Weather-App).
 
@@ -12,6 +12,7 @@ Source code available on [Github](https://github.com/MaxMilton/Simple-Weather-Ap
 * Uses browser built in geolocation to get coordinates.
 * CSS3 animations on colour change and location panel appearing.
 * Shows weather from a random city on page load and button.
+* Able to run on https even though OpenWeatherMap is http only by using a proxy
 
 ## Development Instructions
 
