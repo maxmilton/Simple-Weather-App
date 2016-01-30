@@ -33,6 +33,10 @@ angular
         return parseInt(Math.round(num * 10) / 10) || '';
       };
 
+      var prepareUri = function (uri) {
+        return uri.replace(/&/g, '%26');
+      };
+
       vm.kelvinToCelcius = function(kelvin) {
         // Convert degrees kelvin to degrees Celsius
         return round(kelvin - 273.15);
@@ -42,9 +46,9 @@ angular
         // Reset latitude value to hide extra panel
         vm.lat = '';
 
-        // Set the OpenWeatherMap API URls
-        _apiUrlCurrent = 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + _apiKey + '&callback=JSON_CALLBACK';
-        _apiUrlDaily = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + query + '&cnt=1&APPID=' + _apiKey + '&callback=JSON_CALLBACK';
+        // Set the OpenWeatherMap API URls (via a http to https proxy)
+        _apiUrlCurrent = prepareUri('https://jsonp.afeld.me/?url=' + 'http://api.openweathermap.org/data/2.5/weather?q=' + query + '&APPID=' + _apiKey + '&callback=JSON_CALLBACK');
+        _apiUrlDaily = prepareUri('https://jsonp.afeld.me/?url=' + 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + query + '&cnt=1&APPID=' + _apiKey + '&callback=JSON_CALLBACK');
 
         // Request the actual data
         vm.weather.current();
@@ -63,9 +67,9 @@ angular
           // Get an image from Google Maps
           vm.locationImg = $sce.trustAsHtml('<img class="img" src="https://maps.googleapis.com/maps/api/staticmap?center=' + vm.lat + ',' + vm.lon + '&zoom=13&size=537x300&sensor=false" width="576" height="300" />');
 
-          // Set the OpenWeatherMap API URls
-          _apiUrlCurrent = 'http://api.openweathermap.org/data/2.5/weather?lat=' + round(vm.lat) + '&lon=' + round(vm.lon) + '&APPID=' + _apiKey + '&callback=JSON_CALLBACK';
-          _apiUrlDaily = 'http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + round(vm.lat) + '&lon=' + round(vm.lon) + '&cnt=1&APPID=' + _apiKey + '&callback=JSON_CALLBACK';
+          // Set the OpenWeatherMap API URls (via a http to https proxy)
+          _apiUrlCurrent = prepareUri('https://jsonp.afeld.me/?url=' + 'http://api.openweathermap.org/data/2.5/weather?lat=' + round(vm.lat) + '&lon=' + round(vm.lon) + '&APPID=' + _apiKey + '&callback=JSON_CALLBACK');
+          _apiUrlDaily = prepareUri('https://jsonp.afeld.me/?url=' + 'http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + round(vm.lat) + '&lon=' + round(vm.lon) + '&cnt=1&APPID=' + _apiKey + '&callback=JSON_CALLBACK');
 
           // Once we have the location request the weather data
           vm.weather.current();
