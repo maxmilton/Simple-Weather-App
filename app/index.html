@@ -56,8 +56,8 @@
       </div>
       <div class="right">
         <span class="icon">A</span>
-        <p>Sunrise: <span class="info">{{ main.dataCurrent.sys.sunrise * 1000 | date:'shortTime' }}</span></p>
-        <p>Sunset: <span class="info">{{ main.dataCurrent.sys.sunset * 1000 | date:'shortTime' }}</span></p>
+        <p>Sunrise: <span class="info">{{ main.dataCurrent.sys.sunrise * 1000 | date : 'shortTime' : 'UTC' }}</span></p>
+        <p>Sunset: <span class="info">{{ main.dataCurrent.sys.sunset * 1000 | date : 'shortTime' : 'UTC' }}</span></p>
       </div>
     </div>
   </section>
