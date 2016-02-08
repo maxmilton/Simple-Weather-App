@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
   <title>Simple Weather App</title>
-  <meta name="description" content="A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.">
+  <meta name="description" content="A simple experiment using AngularJS, various APIs, and CSS3.">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -23,7 +23,7 @@
 
 <header>
   <h1>Simple Weather App</h1>
-  <p class="lead">A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.</p>
+  <p class="lead">A simple experiment using AngularJS, various APIs, and CSS3.</p>
   <p>Source code available on <a href="https://github.com/MaxMilton/Simple-Weather-App">Github</a>.</p>
 </header>
 
@@ -56,8 +56,8 @@
       </div>
       <div class="right">
         <span class="icon">A</span>
-        <p>Sunrise: <span class="info">{{ main.dataCurrent.sys.sunrise * 1000 | date : 'shortTime' : 'UTC' }}</span></p>
-        <p>Sunset: <span class="info">{{ main.dataCurrent.sys.sunset * 1000 | date : 'shortTime' : 'UTC' }}</span></p>
+        <p>Sunrise: <span class="info">{{ main.dataCurrent.sys.sunrise * 1000 | date : 'shortTime' }}</span></p>
+        <p>Sunset: <span class="info">{{ main.dataCurrent.sys.sunset * 1000 | date : 'shortTime' }}</span></p>
       </div>
     </div>
   </section>
