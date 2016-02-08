@@ -91,7 +91,7 @@ angular
               vm.dataCurrent = data;
 
               // Set search/location input to show current location
-              vm.searchBox = vm.dataCurrent.name;
+              vm.searchBox = vm.dataCurrent.name + ', ' + vm.dataCurrent.sys.country;
 
               // Show relevant icon
               vm.showIcon();
@@ -102,7 +102,7 @@ angular
         },
         daily: function() {
           // Do a JSONP AJAX request to get daily weather data, use caching for performance
-          $http.jsonp(_apiUrlDaily, {cache: true})
+          $http.jsonp(_apiUrlDaily, { cache: true })
             .success(function(data) {
               // $log.debug("Daily weather data: ", data);
               vm.dataDaily = data;
@@ -207,8 +207,8 @@ angular
       vm.randomCity = function () {
         // Bunch of cities for random selection
         var cities = [
-          'Sydney',
-          'Melbourne',
+          'Sydney, AU',
+          'Melbourne, AU',
           'Tokyo',
           'Osaka',
           'Seoul',
