@@ -2,6 +2,8 @@ A simple experiment using AngularJS, the OpenWeatherMap API, and CSS3.
 
 # Overview
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/MaxMilton/Simple-Weather-App.svg)](https://greenkeeper.io/)
+
 Mostly just a project to allow me to experiment with AngularJS. View a live version at https://labs.wearegenki.com/experiments/simple-weather-app/
 
 Source code available on [Github](https://github.com/MaxMilton/Simple-Weather-App).
